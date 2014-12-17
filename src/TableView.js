@@ -72,8 +72,10 @@ TableView.prototype.setupLandscape = function() {
 	this.table.position.x = 0;
 	this.table.position.y = 640;
 
-	this.sliderView.position.x = this.visibleRect.x + this.visibleRect.width - this.sliderView.height;
-	this.sliderView.position.y = this.visibleRect.y + this.visibleRect.height;
+	var r = this.visibleRect;
+
+	this.sliderView.position.x = r.x + r.width - this.sliderView.height;
+	this.sliderView.position.y = r.y + r.height;
 
 	this.sliderView.setWidth(this.visibleRect.height);
 	this.sliderView.rotation = -Math.PI / 2;
@@ -87,8 +89,10 @@ TableView.prototype.setupPortrait = function() {
 	this.table.position.x = 0;
 	this.table.position.y = 0;
 
-	this.sliderView.position.x = this.visibleRect.x;
-	this.sliderView.position.y = this.visibleRect.y + this.visibleRect.height - this.sliderView.height;
+	var r = this.visibleRect;
+
+	this.sliderView.position.x = r.x;
+	this.sliderView.position.y = r.y + r.height - this.sliderView.height;
 
 	this.sliderView.setWidth(this.visibleRect.width);
 	this.sliderView.rotation = 0;
